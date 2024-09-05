@@ -13,24 +13,24 @@ on:
 
 jobs:    
   info:
-    uses: github:data-openneuro/disease/.github/workflows/add_info.yml
+    uses: github:data-openneuro/disease/.github/workflows/add_info.yml@latest
     with:
       dataset_id: ${{ inputs.dataset_id }} 
   nii2src:
-    uses: github:data-openneuro/disease/.github/workflows/nii2src.yml
+    uses: github:data-openneuro/disease/.github/workflows/nii2src.yml@latest
     needs: info
     with:
       dataset_id: ${{ inputs.dataset_id }}      
           
   src_quality_check:
-    uses: github:data-openneuro/disease/.github/workflows/src_qc.yml
+    uses: github:data-openneuro/disease/.github/workflows/src_qc.yml@latest
     needs: nii2src
     with:
       src_list: 'sz'
       dataset_id: ${{ inputs.dataset_id }} 
 
   reconstruction:
-    uses: github:data-openneuro/disease/.github/workflows/recon.yml
+    uses: github:data-openneuro/disease/.github/workflows/recon.yml@latest
     needs: nii2src
     with:
       dataset_id: ${{ inputs.dataset_id }}
@@ -38,7 +38,7 @@ jobs:
           
   database_construction:
     if: inputs.run_qsdr == true
-    uses: github:data-openneuro/disease/.github/workflows/create_db.yml
+    uses: github:data-openneuro/disease/.github/workflows/create_db.yml@latest
     needs: reconstruction
     strategy:
       matrix:
