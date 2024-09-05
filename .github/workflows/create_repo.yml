@@ -18,34 +18,34 @@ on:
 jobs:
   delete:
     if: inputs.delete_file != ''
-    uses: data-openneuro/disease/.github/workflows/delete_file.yml@latest
+    uses: data-openneuro/disease/.github/workflows/delete_file.yml@main
     with:
       dataset_id: ${{ inputs.dataset_id }}
       keywords: ${{ inputs.delete_file }}
 
   info:
     if: inputs.delete_file == ''
-    uses: data-openneuro/disease/.github/workflows/add_info.yml@latest
+    uses: data-openneuro/disease/.github/workflows/add_info.yml@main
     with:
       dataset_id: ${{ inputs.dataset_id }} 
 
   nii2src:
     if: inputs.delete_file == ''
-    uses: data-openneuro/disease/.github/workflows/nii2src.yml@latest
+    uses: data-openneuro/disease/.github/workflows/nii2src.yml@main
     needs: info
     with:
       dataset_id: ${{ inputs.dataset_id }}      
           
   src_quality_check:
     if: inputs.delete_file == ''
-    uses: data-openneuro/disease/.github/workflows/src_qc.yml@latest
+    uses: data-openneuro/disease/.github/workflows/src_qc.yml@main
     needs: nii2src
     with:
       dataset_id: ${{ inputs.dataset_id }} 
 
   reconstruction:
     if: inputs.delete_file == ''
-    uses: data-openneuro/disease/.github/workflows/recon.yml@latest
+    uses: data-openneuro/disease/.github/workflows/recon.yml@main
     needs: nii2src
     with:
       dataset_id: ${{ inputs.dataset_id }}
@@ -53,7 +53,7 @@ jobs:
           
   database_construction:
     if: inputs.run_qsdr == true && inputs.delete_file == ''
-    uses: data-openneuro/disease/.github/workflows/create_db.yml@latest
+    uses: data-openneuro/disease/.github/workflows/create_db.yml@main
     needs: reconstruction
     strategy:
       matrix:
