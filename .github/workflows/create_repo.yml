@@ -16,6 +16,13 @@ on:
         required: false
 
 jobs:
+  delete:
+    if: inputs.delete_file != ''
+    uses: github:data-openneuro/disease/.github/workflows/delete_file.yml@latest
+    with:
+      dataset_id: ${{ inputs.dataset_id }}
+      keywords: ${{ inputs.delete_file }}
+
   info:
     if: inputs.delete_file == ''
     uses: github:data-openneuro/disease/.github/workflows/add_info.yml@latest
@@ -54,4 +61,3 @@ jobs:
           metrics: ['qa','dti_fa']
     with:
       metrics: ${{ matrix.metrics}}
-  
