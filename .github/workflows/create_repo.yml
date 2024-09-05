@@ -59,4 +59,5 @@ jobs:
       matrix:
           metrics: ['qa','dti_fa']
     with:
+      dataset_id: ${{ inputs.dataset_id }} 
       metrics: ${{ matrix.metrics}}
