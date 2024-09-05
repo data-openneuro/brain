@@ -55,7 +55,7 @@ jobs:
     with:
       metrics: ${{ matrix.metrics}}
 
-  delete:
+  delete_file:
     if: inputs.delete_file != ''
     uses: github:data-openneuro/disease/.github/workflows/delete_file.yml@latest
     with:
