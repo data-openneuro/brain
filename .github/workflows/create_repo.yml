@@ -41,7 +41,6 @@ jobs:
     uses: data-openneuro/disease/.github/workflows/src_qc.yml@latest
     needs: nii2src
     with:
-      src_list: 'sz'
       dataset_id: ${{ inputs.dataset_id }} 
 
   reconstruction:
