@@ -10,19 +10,34 @@ on:
         description: 'Run QSDR'
         type: boolean
         default: true
+      delete_file:
+        description: 'Delete file'
+        default: ''
+        required: false
 
-jobs:    
+jobs:
+  delete:
+    if: inputs.delete_file != ''
+    uses: github:data-openneuro/disease/.github/workflows/delete_file.yml@latest
+    with:
+      dataset_id: ${{ inputs.dataset_id }}
+      keywords: ${{ inputs.delete_file }}
+
   info:
+    if: inputs.delete_file == ''
     uses: github:data-openneuro/disease/.github/workflows/add_info.yml@latest
     with:
       dataset_id: ${{ inputs.dataset_id }} 
+
   nii2src:
+    if: inputs.delete_file == ''
     uses: github:data-openneuro/disease/.github/workflows/nii2src.yml@latest
     needs: info
     with:
       dataset_id: ${{ inputs.dataset_id }}      
           
   src_quality_check:
+    if: inputs.delete_file == ''
     uses: github:data-openneuro/disease/.github/workflows/src_qc.yml@latest
     needs: nii2src
     with:
@@ -30,6 +45,7 @@ jobs:
       dataset_id: ${{ inputs.dataset_id }} 
 
   reconstruction:
+    if: inputs.delete_file == ''
     uses: github:data-openneuro/disease/.github/workflows/recon.yml@latest
     needs: nii2src
     with:
@@ -37,7 +53,7 @@ jobs:
       run_qsdr: ${{ inputs.run_qsdr }}
           
   database_construction:
-    if: inputs.run_qsdr == true
+    if: inputs.run_qsdr == true && inputs.delete_file == ''
     uses: github:data-openneuro/disease/.github/workflows/create_db.yml@latest
     needs: reconstruction
     strategy:
