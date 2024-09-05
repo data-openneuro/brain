@@ -12,30 +12,20 @@
 | ds000206 | 55 | [DWI Traveling Human Phantom Study](https://openneuro.org/datasets/ds000206/) | 
 | ds000244 | 12 | [Individual Brain Charting](https://openneuro.org/datasets/ds000244/) | 
 | ds001021 | 1 | [NKI-sample](https://openneuro.org/datasets/ds001021/) | 
-| ds001226 | 36 | [BTC_preop](https://openneuro.org/datasets/ds001226/) | 
 | ds001242 | 52 | [Examining effects of arousal on responses to salient and non-salient stimuli in younger and older adults](https://openneuro.org/datasets/ds001242/) | 
-| ds001378 | 50 | [SCA2 Diffusion Tensor Imaging](https://openneuro.org/datasets/ds001378/) | 
 | ds001419 | 1 | [thoughtExperiment](https://openneuro.org/datasets/ds001419/) | 
 | ds001499 | 2 | [BOLD5000](https://openneuro.org/datasets/ds001499/) | 
 | ds001590 | 32 | [Feature Discrimination](https://openneuro.org/datasets/ds001590/) | 
 | ds001595 | 1 | [Test dataset for XCP software](https://openneuro.org/datasets/ds001595/) | 
-| ds001743 | 12 | [Unilateral Glaucoma 3T dMRI](https://openneuro.org/datasets/ds001743/) | 
 | ds001771 | 40 | [InterTVA. A multimodal MRI dataset for the study of inter-individual differences in voice perception and identification.](https://openneuro.org/datasets/ds001771/) | 
 | ds001796 | 64 | [Bilingualism and the brain](https://openneuro.org/datasets/ds001796/) | 
-| ds001875 | 9 | [TheVirtualBrain Macaque MRI](https://openneuro.org/datasets/ds001875/) | 
 | ds001894 | 113 | [Longitudinal Brain Correlates of Multisensory Lexical Processing in Children](https://openneuro.org/datasets/ds001894/) | 
-| ds001907 | 16 | [ANT: Healthy aging and Parkinson's disease](https://openneuro.org/datasets/ds001907/) | 
-| ds001919 | 236 | [Spinal Cord MRI Public Database (Multi-subjects)](https://openneuro.org/datasets/ds001919/) | 
-| ds001928 | 40 | [Functional Connectivity of Music-Induced Analgesia in Fibromyalgia](https://openneuro.org/datasets/ds001928/) | 
 | ds001942 | 10 | [Auditory localization with 7T fMRI](https://openneuro.org/datasets/ds001942/) | 
-| ds002080 | 29 | [BTC_postop](https://openneuro.org/datasets/ds002080/) | 
 | ds002087 | 1 | [Datasets with and without deliberate head movements for detection and imputation of dropout in diffusion MRI](https://openneuro.org/datasets/ds002087/) | 
 | ds002185 | 22 | [Human Olfaction Without Apparent Olfactory Bulbs](https://openneuro.org/datasets/ds002185/) | 
 | ds002278 | 2 | [Dense Investigation of Variability of Affect (DIVA)](https://openneuro.org/datasets/ds002278/) | 
 | ds002307 | 19 | [individual_dMRI_fMRI](https://openneuro.org/datasets/ds002307/) | 
 | ds002330 | 66 | [Neuroimaging predictors of creativity in healthy adults](https://openneuro.org/datasets/ds002330/) | 
-| ds002374 | 1 | [3AM straight reproducibility phantoms](https://openneuro.org/datasets/ds002374/) | 
-| ds002393 | 19 | [Spinal Cord MRI Public Database (Single-subject)](https://openneuro.org/datasets/ds002393/) | 
 | ds002543 | 48 | [Learning, Inhibitory Control, and Perception](https://openneuro.org/datasets/ds002543/) | 
 | ds002602 | 56 | [The Reading Brain Project L2 Adults](https://openneuro.org/datasets/ds002602/) | 
 | ds002685 | 13 | [IBC](https://openneuro.org/datasets/ds002685/) | 
@@ -43,14 +33,10 @@
 | ds002790 | 226 | [AOMIC-PIOP2](https://openneuro.org/datasets/ds002790/) | 
 | ds002843 | 262 | [Cognitive Training](https://openneuro.org/datasets/ds002843/) | 
 | ds003011 | 30 | [Social Processes Initiative in Neurobiology of the Schizophrenia(s) Traveling Human Phantoms](https://openneuro.org/datasets/ds003011/) | 
-| ds003027 | 36 | [plp_nf1_dMRI_fMRI](https://openneuro.org/datasets/ds003027/) | 
-| ds003037 | 149 | [SUDMEX_TMS: The Mexican dataset of an rTMS clinical trial on cocaine use disorder patients.](https://openneuro.org/datasets/ds003037/) |
 | ds003047/ | 18 | [DTI data from 'Fiber architecture in the ventromedial striatum and its relation with the bed nucleus of the stria terminalis'](https://openneuro.org/datasets/ds003047/) | 
 | ds003097/ | 925 | [AOMIC-ID1000](https://openneuro.org/datasets/ds003097/) | 
 | ds003138/ | 159 | [Tidying Up White Matter: Neuroplastic Transformations in Sensorimotor Tracts following Slackline Skill Acquisition](https://openneuro.org/datasets/ds003138/) | 
 | ds003171/ | 17 | [Modeling an auditory stimulated brain under altered states of consciousness using the generalized ising model](https://openneuro.org/datasets/ds003171/) | 
-| ds003346/ | 136 | [SUDMEX_CONN: The Mexican dataset of cocaine use disorder patients.](https://openneuro.org/datasets/ds003346/) | 
-| ds003367/ | 49 | [Ascending arousal network connectivity during recovery from traumatic coma](https://openneuro.org/datasets/ds003367/) | 
 | ds003416/ | 169 | [MASiVar: Multisite, Multiscanner, and Multisubject Acquisitions for Studying Variability in Diffusion Weighted Magnetic Resonance Imaging](https://openneuro.org/datasets/ds003416/) | 
 | ds003424/ | 28 | [Identification of an Amygdala-Thalamic Circuit That Acts as a Central Gain Mechanism in Taste Perception](https://openneuro.org/datasets/ds003424/) | 
 | ds003495/ | 48 | [dStreamUpgrade](https://openneuro.org/datasets/ds003495/) | 
@@ -61,7 +47,6 @@
 | ds003604/ | 362 | [A longitudinal neuroimaging dataset on language processing in children ages 5, 7, and 9 years old](https://openneuro.org/datasets/ds003604/) | 
 | ds003872/ | 56 | [The Reading Brain Project L2 Adults](https://openneuro.org/datasets/ds003872/) | 
 | ds003900/ | 284 | [TractoInferno: A large-scale, open-source, multi-site database for machine learning dMRI tractography](https://openneuro.org/datasets/ds003900/) | 
-| ds003959/ | 12 | [Soma and Neurite Density MRI (SANDI) of the in-vivo mouse brain](https://openneuro.org/datasets/ds003959/) | 
 | ds003974/ | 52 | [The Reading Brain Project L1 Adults](https://openneuro.org/datasets/ds003974/) | 
 | ds003988/ | 56 | [The Reading Brain Project L2 Adults](https://openneuro.org/datasets/ds003988/) | 
 | ds003989/ | 3 | [Structural, diffusion and rs-functional MRI data in Macaque Monkeys](https://openneuro.org/datasets/ds003989/) | 
@@ -69,12 +54,9 @@
 | ds004078/ | 12 | [A synchronized multimodal neuroimaging dataset to study brain language processing](https://openneuro.org/datasets/ds004078/) | 
 | ds004097/ | 40 | [An open-access accelerated adult equivalent of the ABCD Study neuroimaging dataset (a-ABCD)](https://openneuro.org/datasets/ds004097/) | 
 | ds004146/ | 718 | [Queensland Twin Adolescent Brain (QTAB)](https://openneuro.org/datasets/ds004146/) | 
-| ds004161/ | 48 | [Turone Sheep Chronic Stress (TSCS)](https://openneuro.org/datasets/ds004161/) | 
 | ds004215/ | 249 | [The NIMH Healthy Research Volunteer Dataset](https://openneuro.org/datasets/ds004215/) | 
 | ds004299/ | 247 | [Characterizing habit learning in the human brain at the individual and group levels: a multi-modal MRI study](https://openneuro.org/datasets/ds004299/) | 
 | ds004305/ | 32 | [Mapping neuroinflammation in vivo with diffusion-MRI in rats given a systemic lipopolysaccharide challenge](https://openneuro.org/datasets/ds004305/) | 
-| ds004441/ | 28 | [Rat_diffusion_STZ](https://openneuro.org/datasets/ds004441/) | 
-| ds004498/ | 7 | [Perinatal Stroke](https://openneuro.org/datasets/ds004498/) | 
 | ds004513/ | 29 | [The energetic costs of the human connectome](https://openneuro.org/datasets/ds004513/) | 
 | ds004581/ | 29 | [ Brain Differences in Monolingual and Highly Proficient Multilingual Speakers](https://openneuro.org/datasets/ds004581/) | 
 | ds004605/ | 132 | [Emotion and Development Branch Phenotyping and DTI (2012-2017)](https://openneuro.org/datasets/ds004605/) | 
@@ -88,19 +70,14 @@
 | ds004744/ | 17 | [White matter tract and peaks](https://openneuro.org/datasets/ds004744/) | 
 | ds004765/ | 46 | [language fMRI](https://openneuro.org/datasets/ds004765/) | 
 | ds004856/ | 955 | [The Dallas Lifespan Brain Study](https://openneuro.org/datasets/ds004856/) | 
-| ds004884/ | 613 | [Aphasia Recovery Cohort (ARC) Dataset](https://openneuro.org/datasets/ds004884/) | 
-| ds004889/ | 1715 | [Stroke Outcome Optimization Project (SOOP)](https://openneuro.org/datasets/ds004889/) | 
 | ds004910/ | 134 | [An open relaxation-diffusion MRI dataset in neurosurgical studies](https://openneuro.org/datasets/ds004910/) | 
 | ds004917/ | 45 | [Probability Decision-making Task with ambiguity](https://openneuro.org/datasets/ds004917/) | 
 | ds004958/ | 33 | [The FreeSurfer Maintenance Dataset](https://openneuro.org/datasets/ds004958/) | 
 | ds004962/ | 28 | [MRI dataset evaluating the effect of head down tilt 15° on cerebral perfusion in acute ischemic experimental stroke](https://openneuro.org/datasets/ds004962/) | 
-| ds005026/ | 82 | [Hearing loss Connectome](https://openneuro.org/datasets/ds005026/) | 
-| ds005063/ | 1 | [CR DBS](https://openneuro.org/datasets/ds005063/) | 
 | ds005123/ | 108 | [Social Reward and Nonsocial Reward Processing Across the Adult Lifespan: An Interim Multi-echo fMRI and Diffusion Dataset](https://openneuro.org/datasets/ds005123/) | 
 | ds005134/ | 1 | [Sequence test for multiband DWI and magnetization transfer sequence](https://openneuro.org/datasets/ds005134/) | 
 | ds005236/ | 59 | [Effects of environmental enrichment on brain microstructure in C58 mice (adult cohort)](https://openneuro.org/datasets/ds005236/) | 
 | ds005270/ | 153 | [BOLD variability during cognitive control for an adult lifespan sample ](https://openneuro.org/datasets/ds005270/) | 
 | ds005299/ | 25 | [Maternal Brain Project](https://openneuro.org/datasets/ds005299/) | 
 | ds005364/ | 90 | [neuroCOVID MRI dWI and fMRI with reversal learning ](https://openneuro.org/datasets/ds005364/) | 
-| ds005402/ | 34 | [MPTP mouse](https://openneuro.org/datasets/ds005402/) | 
 
