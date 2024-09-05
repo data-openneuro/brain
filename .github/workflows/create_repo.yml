@@ -13,70 +13,35 @@ on:
 
 jobs:    
   info:
-    steps:
-      - name: Checkout disease repo
-        uses: actions/checkout@v3
-        with:
-          repository: 'data-openneuro/disease'
-          path: 'disease-repo'
-      - name: Run add_info workflow
-        uses: ./disease-repo/.github/workflows/add_info.yml
-        with:
-          dataset_id: ${{ inputs.dataset_id }} 
+    uses: github:data-openneuro/disease/.github/workflows/add_info.yml
+    with:
+      dataset_id: ${{ inputs.dataset_id }} 
   nii2src:
+    uses: github:data-openneuro/disease/.github/workflows/nii2src.yml
     needs: info
-    steps:
-      - name: Checkout disease repo
-        uses: actions/checkout@v3
-        with:
-          repository: 'data-openneuro/disease'
-          path: 'disease-repo'
-      - name: Run nii2src workflow
-        uses: ./disease-repo/.github/workflows/nii2src.yml
-        with:
-          dataset_id: ${{ inputs.dataset_id }}      
+    with:
+      dataset_id: ${{ inputs.dataset_id }}      
           
   src_quality_check:
+    uses: github:data-openneuro/disease/.github/workflows/src_qc.yml
     needs: nii2src
-    steps:
-      - name: Checkout disease repo
-        uses: actions/checkout@v3
-        with:
-          repository: 'data-openneuro/disease'
-          path: 'disease-repo'
-      - name: Run src_qc workflow
-        uses: ./disease-repo/.github/workflows/src_qc.yml
-        with:
-          src_list: 'sz'
-          dataset_id: ${{ inputs.dataset_id }} 
+    with:
+      src_list: 'sz'
+      dataset_id: ${{ inputs.dataset_id }} 
 
   reconstruction:
+    uses: github:data-openneuro/disease/.github/workflows/recon.yml
     needs: nii2src
-    steps:
-      - name: Checkout disease repo
-        uses: actions/checkout@v3
-        with:
-          repository: 'data-openneuro/disease'
-          path: 'disease-repo'
-      - name: Run recon workflow
-        uses: ./disease-repo/.github/workflows/recon.yml
-        with:
-          dataset_id: ${{ inputs.dataset_id }}
-          run_qsdr: ${{ inputs.run_qsdr }}
+    with:
+      dataset_id: ${{ inputs.dataset_id }}
+      run_qsdr: ${{ inputs.run_qsdr }}
           
   database_construction:
     if: inputs.run_qsdr == true
+    uses: github:data-openneuro/disease/.github/workflows/create_db.yml
     needs: reconstruction
-    steps:
-      - name: Checkout disease repo
-        uses: actions/checkout@v3
-        with:
-          repository: 'data-openneuro/disease'
-          path: 'disease-repo'
-      - name: Run create_db workflow
-        uses: ./disease-repo/.github/workflows/create_db.yml
-        with:
-          metrics: 'qa'
-        strategy:
-          matrix:
-            metrics: ['qa','dti_fa']
+    strategy:
+      matrix:
+          metrics: ['qa','dti_fa']
+    with:
+      metrics: ${{ matrix.metrics}}
