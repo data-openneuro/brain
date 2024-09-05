@@ -13,26 +13,19 @@ on:
 
 jobs:    
   info:
-    uses: actions/checkout@v3
-    with:
-      repository: 'data-openneuro/disease'
-      path: 'openneuro-disease-repo'
-    run: |
-      # Checkout the other repository
-      git checkout main
-    uses: ./openneuro-disease-repo/.github/workflows/add_info.yml
+    uses: data-openneuro/disease/.github/workflows/add_info.yml@main
     name: Access OpenNeuro
     with:
       dataset_id: ${{ inputs.dataset_id }} 
   nii2src:
-    uses: ./openneuro-disease-repo/.github/workflows/nii2src.yml
+    uses: data-openneuro/disease/.github/workflows/nii2src.yml@main
     needs: info
     name: Call NII to SRC
     with:
       dataset_id: ${{ inputs.dataset_id }}      
           
   src_quality_check:
-    uses: ./openneuro-disease-repo/.github/workflows/src_qc.yml
+    uses: data-openneuro/disease/.github/workflows/src_qc.yml@main
     needs: nii2src
     name: SRC Quality Check
     with:
@@ -40,7 +33,7 @@ jobs:
       dataset_id: ${{ inputs.dataset_id }} 
 
   reconstruction:
-    uses: ./openneuro-disease-repo/.github/workflows/recon.yml
+    uses: data-openneuro/disease/.github/workflows/recon.yml@main
     needs: nii2src
     name: SRC to FIB
     with:
@@ -49,7 +42,7 @@ jobs:
           
   database_construction:
     if: inputs.run_qsdr == true
-    uses: ./openneuro-disease-repo/.github/workflows/create_db.yml
+    uses: data-openneuro/disease/.github/workflows/create_db.yml@main
     needs: reconstruction
     strategy:
       matrix:
