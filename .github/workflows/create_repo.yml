@@ -54,10 +54,4 @@ jobs:
           metrics: ['qa','dti_fa']
     with:
       metrics: ${{ matrix.metrics}}
-
-  delete_file:
-    if: inputs.delete_file != ''
-    uses: github:data-openneuro/disease/.github/workflows/delete_file.yml@latest
-    with:
-      dataset_id: ${{ inputs.dataset_id }}
-      keywords: ${{ inputs.delete_file }}      
+  
