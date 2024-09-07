@@ -56,7 +56,6 @@
 | ds004513/ | 29 | [The energetic costs of the human connectome](https://openneuro.org/datasets/ds004513/) | 
 | ds004581/ | 29 | [ Brain Differences in Monolingual and Highly Proficient Multilingual Speakers](https://openneuro.org/datasets/ds004581/) | 
 | ds004605/ | 132 | [Emotion and Development Branch Phenotyping and DTI (2012-2017)](https://openneuro.org/datasets/ds004605/) | 
-| ds004632/ | 27 | [DTI readouts for designing a preclinical stem-cell therapy trial in experimental stroke](https://openneuro.org/datasets/ds004632/) | 
 | ds004640/ | 2 | [Sustaining wakefulness: Brainstem connectivity in human consciousness](https://openneuro.org/datasets/ds004640/) | 
 | ds004666/ | 3 | [EDDEN: Evaluation of Diffusion MRI DENoising](https://openneuro.org/datasets/ds004666/) | 
 | ds004712/ | 80 | [ON-Harmony: A resource for development and comparison of multimodal brain 3T MRI harmonisation approaches](https://openneuro.org/datasets/ds004712/) | 
@@ -69,10 +68,8 @@
 | ds004910/ | 134 | [An open relaxation-diffusion MRI dataset in neurosurgical studies](https://openneuro.org/datasets/ds004910/) | 
 | ds004917/ | 45 | [Probability Decision-making Task with ambiguity](https://openneuro.org/datasets/ds004917/) | 
 | ds004958/ | 33 | [The FreeSurfer Maintenance Dataset](https://openneuro.org/datasets/ds004958/) | 
-| ds004962/ | 28 | [MRI dataset evaluating the effect of head down tilt 15° on cerebral perfusion in acute ischemic experimental stroke](https://openneuro.org/datasets/ds004962/) | 
 | ds005123/ | 108 | [Social Reward and Nonsocial Reward Processing Across the Adult Lifespan: An Interim Multi-echo fMRI and Diffusion Dataset](https://openneuro.org/datasets/ds005123/) | 
 | ds005134/ | 1 | [Sequence test for multiband DWI and magnetization transfer sequence](https://openneuro.org/datasets/ds005134/) | 
-| ds005236/ | 59 | [Effects of environmental enrichment on brain microstructure in C58 mice (adult cohort)](https://openneuro.org/datasets/ds005236/) | 
 | ds005270/ | 153 | [BOLD variability during cognitive control for an adult lifespan sample ](https://openneuro.org/datasets/ds005270/) | 
 | ds005299/ | 25 | [Maternal Brain Project](https://openneuro.org/datasets/ds005299/) | 
 | ds005364/ | 90 | [neuroCOVID MRI dWI and fMRI with reversal learning ](https://openneuro.org/datasets/ds005364/) | 
