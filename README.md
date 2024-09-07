@@ -53,7 +53,6 @@
 | ds004146/ | 718 | [Queensland Twin Adolescent Brain (QTAB)](https://openneuro.org/datasets/ds004146/) | 
 | ds004215/ | 249 | [The NIMH Healthy Research Volunteer Dataset](https://openneuro.org/datasets/ds004215/) | 
 | ds004299/ | 247 | [Characterizing habit learning in the human brain at the individual and group levels: a multi-modal MRI study](https://openneuro.org/datasets/ds004299/) | 
-| ds004305/ | 32 | [Mapping neuroinflammation in vivo with diffusion-MRI in rats given a systemic lipopolysaccharide challenge](https://openneuro.org/datasets/ds004305/) | 
 | ds004513/ | 29 | [The energetic costs of the human connectome](https://openneuro.org/datasets/ds004513/) | 
 | ds004581/ | 29 | [ Brain Differences in Monolingual and Highly Proficient Multilingual Speakers](https://openneuro.org/datasets/ds004581/) | 
 | ds004605/ | 132 | [Emotion and Development Branch Phenotyping and DTI (2012-2017)](https://openneuro.org/datasets/ds004605/) | 
