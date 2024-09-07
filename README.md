@@ -59,13 +59,11 @@
 | ds004640/ | 2 | [Sustaining wakefulness: Brainstem connectivity in human consciousness](https://openneuro.org/datasets/ds004640/) | 
 | ds004666/ | 3 | [EDDEN: Evaluation of Diffusion MRI DENoising](https://openneuro.org/datasets/ds004666/) | 
 | ds004712/ | 80 | [ON-Harmony: A resource for development and comparison of multimodal brain 3T MRI harmonisation approaches](https://openneuro.org/datasets/ds004712/) | 
-| ds004717/ | 42 | [Utilizing Amide Proton Transfer Technique to Characterise Diffuse Gliomas Based on WHO 2021 Classification of CNS Tumors](https://openneuro.org/datasets/ds004717/) | 
 | ds004737/ | 20 | [CS-DSI](https://openneuro.org/datasets/ds004737/) | 
 | ds004742/ | 1 | [White matter tract](https://openneuro.org/datasets/ds004742/) | 
 | ds004744/ | 17 | [White matter tract and peaks](https://openneuro.org/datasets/ds004744/) | 
 | ds004765/ | 46 | [language fMRI](https://openneuro.org/datasets/ds004765/) | 
 | ds004856/ | 955 | [The Dallas Lifespan Brain Study](https://openneuro.org/datasets/ds004856/) | 
-| ds004910/ | 134 | [An open relaxation-diffusion MRI dataset in neurosurgical studies](https://openneuro.org/datasets/ds004910/) | 
 | ds004917/ | 45 | [Probability Decision-making Task with ambiguity](https://openneuro.org/datasets/ds004917/) | 
 | ds004958/ | 33 | [The FreeSurfer Maintenance Dataset](https://openneuro.org/datasets/ds004958/) | 
 | ds005123/ | 108 | [Social Reward and Nonsocial Reward Processing Across the Adult Lifespan: An Interim Multi-echo fMRI and Diffusion Dataset](https://openneuro.org/datasets/ds005123/) | 
