@@ -47,7 +47,6 @@
 | ds003900/ | 284 | [TractoInferno: A large-scale, open-source, multi-site database for machine learning dMRI tractography](https://openneuro.org/datasets/ds003900/) | 
 | ds003974/ | 52 | [The Reading Brain Project L1 Adults](https://openneuro.org/datasets/ds003974/) | 
 | ds003988/ | 56 | [The Reading Brain Project L2 Adults](https://openneuro.org/datasets/ds003988/) | 
-| ds003989/ | 3 | [Structural, diffusion and rs-functional MRI data in Macaque Monkeys](https://openneuro.org/datasets/ds003989/) | 
 | ds004024/ | 7 | [TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation and connectivity (Shirley Ryan AbilityLab, Chicago, IL)](https://openneuro.org/datasets/ds004024/) | 
 | ds004078/ | 12 | [A synchronized multimodal neuroimaging dataset to study brain language processing](https://openneuro.org/datasets/ds004078/) | 
 | ds004097/ | 40 | [An open-access accelerated adult equivalent of the ABCD Study neuroimaging dataset (a-ABCD)](https://openneuro.org/datasets/ds004097/) | 
