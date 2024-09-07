@@ -24,7 +24,6 @@
 | ds002087 | 1 | [Datasets with and without deliberate head movements for detection and imputation of dropout in diffusion MRI](https://openneuro.org/datasets/ds002087/) | 
 | ds002185 | 22 | [Human Olfaction Without Apparent Olfactory Bulbs](https://openneuro.org/datasets/ds002185/) | 
 | ds002278 | 2 | [Dense Investigation of Variability of Affect (DIVA)](https://openneuro.org/datasets/ds002278/) | 
-| ds002307 | 19 | [individual_dMRI_fMRI](https://openneuro.org/datasets/ds002307/) | 
 | ds002330 | 66 | [Neuroimaging predictors of creativity in healthy adults](https://openneuro.org/datasets/ds002330/) | 
 | ds002543 | 48 | [Learning, Inhibitory Control, and Perception](https://openneuro.org/datasets/ds002543/) | 
 | ds002602 | 56 | [The Reading Brain Project L2 Adults](https://openneuro.org/datasets/ds002602/) | 
