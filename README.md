@@ -42,7 +42,6 @@
 | ds003505/ | 20 | [VEPCON: Source imaging of high-density visual evoked potentials with multi-scale brain parcellations and connectomes](https://openneuro.org/datasets/ds003505/) | 
 | ds003508/ | 55 | [Language Learning Aptitude dataset](https://openneuro.org/datasets/ds003508/) | 
 | ds003563/ | 4 | [Data from: Comprehensive ultrahigh resolution whole brain in vivo MRI dataset as a human phantom](https://openneuro.org/datasets/ds003563/) | 
-| ds003599/ | 133 | [White matter deficits in cocaine use disorder V1.0](https://openneuro.org/datasets/ds003599/) | 
 | ds003604/ | 362 | [A longitudinal neuroimaging dataset on language processing in children ages 5, 7, and 9 years old](https://openneuro.org/datasets/ds003604/) | 
 | ds003872/ | 56 | [The Reading Brain Project L2 Adults](https://openneuro.org/datasets/ds003872/) | 
 | ds003900/ | 284 | [TractoInferno: A large-scale, open-source, multi-site database for machine learning dMRI tractography](https://openneuro.org/datasets/ds003900/) | 
