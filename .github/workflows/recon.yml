@@ -69,9 +69,6 @@ jobs:
                 gh release upload "${{ inputs.dataset_id }}" *.fz || gh release upload "${{ inputs.dataset_id }}" *.fz 
                 rm *.sz
                 rm *.fz
-              else
-                echo "ERROR: cannot find SRC file $url for reconstruction" >&2
-                exit 1
               fi
             fi
           done
