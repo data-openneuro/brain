@@ -1,0 +1,101 @@
+name: STEP T1 NII to SRC
+
+on:
+  workflow_dispatch:
+    inputs:
+      dataset_id:
+        description: 'OpenNeuro Accession Number'
+        default: ds001378
+        required: true
+      topup_eddy:
+        description: 'Topup Eddy Current Correction'
+        default: true
+        required: false
+        type: boolean
+
+  workflow_call:
+    inputs:
+      dataset_id:
+        description: 'OpenNeuro Accession Number'
+        default: ds001378
+        required: true
+        type: string
+      topup_eddy:
+        description: 'Topup Eddy Current Correction'
+        default: true
+        required: false
+        type: boolean
+
+jobs:
+  nii2src:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        batch: [0, 1, 2, 3, 4, 5, 6, 7]
+      fail-fast: false
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Cache FSL environment
+        id: cache-fsl
+        uses: actions/cache@v3
+        with:
+          path: /opt/fsl
+          key: ${{ runner.os }}-fsl6.0.5.2
+      - name: Prepare FSL environment
+        if: steps.cache-fsl.outputs.cache-hit != 'true'
+        run: curl -sSL https://fsl.fmrib.ox.ac.uk/fsldownloads/fsl-6.0.5.2-centos7_64.tar.gz | tar zxv --no-same-owner -C /opt --exclude='fsl/doc' --exclude='fsl/refdoc' --exclude='fsl/python/oxford_asl' --exclude='fsl/data/possum' --exclude='fsl/data/first' --exclude='fsl/data/mist' --exclude='fsl/data/atlases' --exclude='fsl/data/xtract_data' --exclude='fsl/extras/doc' --exclude='fsl/extras/man' --exclude='fsl/extras/src' --exclude='fsl/src'
+      - name: Download NIFTI and Convert
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -sL "https://github.com/frankyeh/DSI-Studio/releases/download/2024.06.12/dsi_studio_ubuntu2004.zip" | jar x && chmod 777 ./dsi-studio/dsi_studio
+          export OS="Linux"
+          export FSLDIR="/opt/fsl"
+          export FSL_DIR="$FSLDIR"
+          export FSLOUTPUTTYPE="NIFTI_GZ"
+          export FSLMULTIFILEQUIT="TRUE"
+          export LD_LIBRARY_PATH="$FSLDIR/lib:$LD_LIBRARY_PATH"
+          export FSLTCLSH="/usr/bin/tclsh"
+          export FSLWISH="/usr/bin/wish"
+          export PATH="$FSLDIR/bin:$PATH"
+
+          
+          subjects=($(aws s3 ls --no-sign-request --region eu-west-1 s3://openneuro.org/${{ inputs.dataset_id }} --recursive | grep '${{ inputs.dataset_id }}/sub' | grep '/dwi/' | grep 'nii.gz' | awk '{print $NF}' | awk -F'/dwi/' '{print $1}' | awk -F'/sub-' '/sub-/ {print "sub-" $2}' | sort -u ))
+          for (( i=${{ matrix.batch }}; i< ${#subjects[@]}; i+=8 )); do
+            subject=${subjects[i]}
+            file=$(echo ${subject} | tr '/' '_')
+            echo "Processing $file"
+            if curl --head --silent --fail https://github.com/${GITHUB_REPOSITORY}/releases/download/${{ inputs.dataset_id }}/${file}_dwi.sz; then
+              echo "$file exists."
+            else
+              echo "Downloading and processing ${subject}"
+              
+              aws s3 sync --quiet --no-sign-request --region eu-west-1 --exclude "*" --include "*dwi*" s3://openneuro.org/${{ inputs.dataset_id }}/${subject} ${subject}
+              aws s3 sync --quiet --no-sign-request --region eu-west-1 --exclude "*" --include "*fmap*" s3://openneuro.org/${{ inputs.dataset_id }}/${subject} ${subject}
+              mv ./${subject}/fmap/* ./${subject}/dwi || true
+              
+              ls ./${subject}/dwi -l
+
+              if [ "${{ inputs.topup_eddy }}" = "true" ]; then
+                ./dsi-studio/dsi_studio --action=src --bids=1 --source=./${subject}/dwi --topup_eddy=1 --output=.
+              else
+                ./dsi-studio/dsi_studio --action=src --bids=1 --source=./${subject}/dwi --topup_eddy=0 --output=.
+              fi
+
+              mkdir release
+              count=1
+              for src in *.sz; do
+                if [ $count -eq 1 ]; then
+                  mv "$src" "./release/${file}_dwi.sz"
+                else
+                  mv "$src" "./release/${file}_dwi.${count}.sz"
+                fi
+                count=$((count + 1))
+              done              
+              
+              gh release upload "${{ inputs.dataset_id }}" ./release/*.sz || gh release upload "${{ inputs.dataset_id }}" ./release/*.sz
+              rm *.* || true
+              rm -fr ./release
+            fi
+          done
