@@ -1,0 +1,35 @@
+name: DSI Studio Data Hub (From SRCs)
+on: 
+  workflow_dispatch:
+    inputs:
+      dataset_id:
+        description: 'OpenNeuro Accession Number'
+        default: ds001378
+        required: true
+      run_qsdr:
+        description: 'Run QSDR'
+        type: boolean
+        default: true
+
+jobs:          
+  src_quality_check:
+    uses: data-openneuro/disease/.github/workflows/src_qc.yml@main
+    with:
+      dataset_id: ${{ inputs.dataset_id }} 
+
+  reconstruction:
+    uses: data-openneuro/disease/.github/workflows/recon.yml@main
+    with:
+      dataset_id: ${{ inputs.dataset_id }}
+      run_qsdr: ${{ inputs.run_qsdr }}
+          
+  database_construction:
+    if: inputs.run_qsdr == true
+    uses: data-openneuro/disease/.github/workflows/create_db.yml@main
+    needs: reconstruction
+    strategy:
+      matrix:
+          metrics: ['qa','dti_fa']
+    with:
+      dataset_id: ${{ inputs.dataset_id }} 
+      metrics: ${{ matrix.metrics}}
