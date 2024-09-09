@@ -1,0 +1,77 @@
+name: STEP T2 Reconstruction
+
+on:
+  workflow_dispatch:
+    inputs:
+      dataset_id:
+        description: 'OpenNeuro Accession Number'
+        default: ds001378
+        required: true
+      run_qsdr:
+        description: 'Run QSDR'
+        type: boolean
+        default: true
+        required: false
+  workflow_call:
+    inputs:
+      dataset_id:
+        description: 'OpenNeuro Accession Number'
+        default: ds001378
+        required: true
+        type: string
+      run_qsdr:
+        description: 'Run QSDR'
+        type: boolean
+        default: true
+        required: false
+
+jobs:
+  reconstruction:
+    name: SRC to FIB
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [0, 1, 2, 3, 4, 5, 6, 7]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: GQI and QSDR Reconstruction
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -sL "https://github.com/frankyeh/DSI-Studio/releases/download/2024.06.12/dsi_studio_ubuntu2004.zip" | jar x && chmod 777 ./dsi-studio/dsi_studio  
+          subjects=($(aws s3 ls --no-sign-request --region eu-west-1 s3://openneuro.org/${{ inputs.dataset_id }} --recursive | grep '${{ inputs.dataset_id }}/sub' | grep '/dwi/' | grep 'nii.gz' | awk '{print $NF}' | awk -F'/dwi/' '{print $1}' | awk -F'/sub-' '/sub-/ {print "sub-" $2}' | sort -u ))
+          for (( i=${{ matrix.batch }}; i< ${#subjects[@]}; i+=8 )); do        
+            subject=${subjects[i]}
+            file=$(echo $subject | tr '/' '_')
+      
+
+            
+            if curl --head --silent --fail https://github.com/${GITHUB_REPOSITORY}/releases/download/${{ inputs.dataset_id }}/${file}_dwi.qsdr.fz; then
+              echo "${file}_dwi.qsdr.fz exists, skip"
+            else
+              url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${{ inputs.dataset_id }}/${file}_dwi.sz"
+              echo "download ${url} for reconstruction"
+              if curl --head --silent --fail $url; then
+                wget -q $url
+                (wget -q https://github.com/${GITHUB_REPOSITORY}/releases/download/${{ inputs.dataset_id }}/${file}_dwi.2.sz && wget -q https://github.com/${GITHUB_REPOSITORY}/releases/download/${{ inputs.dataset_id }}/${file}_dwi.3.sz && wget -q https://github.com/${GITHUB_REPOSITORY}/releases/download/${{ inputs.dataset_id }}/${file}_dwi.4.sz && wget -q https://github.com/${GITHUB_REPOSITORY}/releases/download/${{ inputs.dataset_id }}/${file}_dwi.5.sz && wget -q https://github.com/${GITHUB_REPOSITORY}/releases/download/${{ inputs.dataset_id }}/${file}_dwi.6.sz) || true
+                
+                anat_files=($(aws s3 ls --no-sign-request --region eu-west-1 s3://openneuro.org/${{ inputs.dataset_id }}/${subject}/anat/ | grep .nii.gz | awk '{print $4}'))
+                anat_files=($(printf "https://s3.amazonaws.com/openneuro.org/${{ inputs.dataset_id }}/${subject}/anat/%s," "${anat_files[@]}"))
+                anat_files=${anat_files%,}
+            
+                
+                ./dsi-studio/dsi_studio --action=rec --source=*.sz --output=*.gqi.fz --other_image="${anat_files}"
+                if [ "${{ inputs.run_qsdr }}" = true ]; then
+                  ./dsi-studio/dsi_studio --action=rec --source=*.sz --output=*.qsdr.fz --method=7
+                fi
+                gh release upload "${{ inputs.dataset_id }}" *.fz || gh release upload "${{ inputs.dataset_id }}" *.fz 
+                rm *.sz
+                rm *.fz
+              else
+                echo "ERROR: cannot find SRC file $url for reconstruction" >&2
+                exit 1
+              fi
+            fi
+          done
