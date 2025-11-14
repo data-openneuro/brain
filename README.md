@@ -1,4 +1,4 @@
-# **OpenNeuro Preprocessed Data**
+## **OpenNeuro Preprocessed Data**
 
 OpenNeuro is a free, open platform and a BRAIN Initiative designated data archive for sharing human and non-human brain imaging data. Hosted by the Stanford Center for Reproducible Neuroscience, it aims to enhance the transparency and reproducibility of scientific research by providing openly available datasets under a Creative Commons CC0 license, which places minimal restrictions on data reuse.
 Key features of OpenNeuro include:
@@ -8,7 +8,7 @@ Standardization: All uploaded data must adhere to the community-developed Brain 
 Accessibility: Datasets can be accessed and downloaded via a web browser, a command-line interface, or the DataLad versioning system.
 Integration: OpenNeuro partners with platforms like Brainlife.io to enable cloud-based analysis and visualization of the stored data.
 
-## Download Commmand
+### Download Commmand
 
 Download ds000009 preprocessed DWI data
 
@@ -26,7 +26,7 @@ curl -s https://api.github.com/repos/data-openneuro/disease/releases/tags/ds0000
 
 ---
 
-## Included DWI Datasets
+### Included DWI Datasets
 
 | DS NUMBER | DWI COUNT |               Original Page            |
 |-----------------|-----------------------|-------------------------------|
