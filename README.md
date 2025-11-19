@@ -50,7 +50,6 @@ curl -s https://api.github.com/repos/data-openneuro/disease/releases/tags/ds0000
 | ds001894 | 113 | [Longitudinal Brain Correlates of Multisensory Lexical Processing in Children](https://openneuro.org/datasets/ds001894/) | 
 | ds001942 | 10 | [Auditory localization with 7T fMRI](https://openneuro.org/datasets/ds001942/) | 
 | ds001919* | 236 | [Spinal Cord MRI Public Database (Multi-subjects)](https://openneuro.org/datasets/ds001919/) | 
-| ds002087 | 1 | [Datasets with and without deliberate head movements for detection and imputation of dropout in diffusion MRI](https://openneuro.org/datasets/ds002087/) | 
 | ds002185 | 22 | [Human Olfaction Without Apparent Olfactory Bulbs](https://openneuro.org/datasets/ds002185/) | 
 | ds002278 | 2 | [Dense Investigation of Variability of Affect (DIVA)](https://openneuro.org/datasets/ds002278/) | 
 | ds002330 | 66 | [Neuroimaging predictors of creativity in healthy adults](https://openneuro.org/datasets/ds002330/) | 
@@ -71,7 +70,6 @@ curl -s https://api.github.com/repos/data-openneuro/disease/releases/tags/ds0000
 | ds003495 | 48 | [dStreamUpgrade](https://openneuro.org/datasets/ds003495/) | 
 | ds003505 | 20 | [VEPCON: Source imaging of high-density visual evoked potentials with multi-scale brain parcellations and connectomes](https://openneuro.org/datasets/ds003505/) | 
 | ds003508 | 55 | [Language Learning Aptitude dataset](https://openneuro.org/datasets/ds003508/) | 
-| ds003563 | 4 | [Data from: Comprehensive ultrahigh resolution whole brain in vivo MRI dataset as a human phantom](https://openneuro.org/datasets/ds003563/) | 
 | ds003604 | 362 | [A longitudinal neuroimaging dataset on language processing in children ages 5, 7, and 9 years old](https://openneuro.org/datasets/ds003604/) | 
 | ds003872 | 56 | [The Reading Brain Project L2 Adults](https://openneuro.org/datasets/ds003872/) | 
 | ds003900 | 284 | [TractoInferno: A large-scale, open-source, multi-site database for machine learning dMRI tractography](https://openneuro.org/datasets/ds003900/) | 
@@ -87,7 +85,6 @@ curl -s https://api.github.com/repos/data-openneuro/disease/releases/tags/ds0000
 | ds004581 | 29 | [ Brain Differences in Monolingual and Highly Proficient Multilingual Speakers](https://openneuro.org/datasets/ds004581/) | 
 | ds004605 | 132 | [Emotion and Development Branch Phenotyping and DTI (2012-2017)](https://openneuro.org/datasets/ds004605/) | 
 | ds004639 | 155 | [nav_training](https://openneuro.org/datasets/ds004639/) | 
-| ds004640 | 2 | [Sustaining wakefulness: Brainstem connectivity in human consciousness](https://openneuro.org/datasets/ds004640/) | 
 | ds004666 | 3 | [EDDEN: Evaluation of Diffusion MRI DENoising](https://openneuro.org/datasets/ds004666/) | 
 | ds004712 | 80 | [ON-Harmony: A resource for development and comparison of multimodal brain 3T MRI harmonisation approaches](https://openneuro.org/datasets/ds004712/) | 
 | ds004737 | 20 | [CS-DSI](https://openneuro.org/datasets/ds004737/) | 
